@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="servertictactoe.ServerController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#onRefresh" style="-fx-background-radius: 20;" text="Refresh" GridPane.columnIndex="1">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="15.0" top="150.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="serverOnOffButton" mnemonicParsing="false" onAction="#serverOnOff" style="-fx-background-radius: 20;" text="Server On" GridPane.columnIndex="1">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </Button>
+      <TableView fx:id="tableView">
+        <columns>
+          <TableColumn fx:id="tableColumnName" editable="false" prefWidth="170.0" resizable="false" sortType="DESCENDING" text="Name" />
+          <TableColumn fx:id="tableColumnStatus" editable="false" prefWidth="100.0" resizable="false" sortType="DESCENDING" text="Status" />
+            <TableColumn fx:id="tableColumnScore" editable="false" prefWidth="100.0" resizable="false" sortType="DESCENDING" text="Score" />
+            <TableColumn fx:id="tableColumnNumGames" editable="false" prefWidth="100.0" resizable="false" sortType="DESCENDING" text="Finished Games" />
+        </columns>
+      </TableView>
+      <Circle fill="RED" radius="10.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="70.0" left="45.0" />
+         </GridPane.margin>
+      </Circle>
+      <Circle fx:id="circleGreen" disable="true" fill="GREEN" radius="10.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="70.0" left="45.0" />
+         </GridPane.margin>
+      </Circle>
+   </children>
+</GridPane>

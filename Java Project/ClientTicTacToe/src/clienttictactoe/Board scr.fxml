@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #1F3274;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienttictactoe.BoardScrController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="434.0" layoutX="413.0" layoutY="159.0" stroke="#555b6907" strokeLineCap="ROUND" strokeType="INSIDE" width="19.0">
+         <fill>
+            <LinearGradient endX="0.9809523809523809" endY="1.0" startX="0.45238095238095233" startY="0.5619047619047617">
+               <stops>
+                  <Stop color="#545a69" />
+                  <Stop color="#9c9e9c" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" layoutX="281.0" layoutY="291.0" stroke="#555b6900" strokeLineCap="ROUND" strokeType="INSIDE" width="434.0">
+         <fill>
+            <LinearGradient endX="0.2428571428571428" endY="0.2571428571428571" startX="0.5571428571428572" startY="0.5619047619047617">
+               <stops>
+                  <Stop color="#515661" />
+                  <Stop color="#9c9e9c" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="434.0" layoutX="564.0" layoutY="159.0" stroke="#555b6900" strokeLineCap="ROUND" strokeType="INSIDE" width="19.0">
+         <fill>
+            <LinearGradient endX="0.2428571428571428" endY="0.2571428571428571" startX="0.3952380952380953" startY="0.5619047619047617">
+               <stops>
+                  <Stop color="#3d424d" />
+                  <Stop color="#9c9e9c" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="19.0" layoutX="281.0" layoutY="442.0" stroke="#555b6900" strokeType="INSIDE" width="434.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.5523809523809524" startY="0.4619047619047617">
+               <stops>
+                  <Stop color="#515661" />
+                  <Stop color="#979997" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label fx:id="title" alignment="TOP_CENTER" focusTraversable="false" layoutX="274.0" layoutY="23.0" prefHeight="65.0" prefWidth="500.0" text="TIC TAC TOE" underline="true">
+         <font>
+            <Font name="Showcard Gothic" size="50.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.67" endY="1.0" startX="0.21" startY="1.0">
+               <stops>
+                  <Stop color="#ff4948" />
+                  <Stop color="#febd08" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="playerX" layoutX="35.0" layoutY="138.0" prefHeight="100.0" prefWidth="175.0" textFill="#febd08">
+         <font>
+            <Font name="Bookman Old Style" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerO" layoutX="898.0" layoutY="138.0" prefHeight="100.0" prefWidth="175.0" textFill="#ff4948">
+         <font>
+            <Font name="Bookman Old Style" size="35.0" />
+         </font>
+      </Label>
+      <Button fx:id="box1" layoutX="281.0" layoutY="159.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="133.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box9" layoutX="583.0" layoutY="461.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box8" layoutX="432.0" layoutY="461.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box7" layoutX="281.0" layoutY="461.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box6" layoutX="583.0" layoutY="310.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box5" layoutX="432.0" layoutY="310.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box4" layoutX="281.0" layoutY="310.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box3" layoutX="583.0" layoutY="159.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="box2" layoutX="432.0" layoutY="160.0" mnemonicParsing="false" onAction="#notifyPressing" prefHeight="132.0" prefWidth="132.0" style="-fx-background-color: #1F3274;" textAlignment="CENTER">
+         <font>
+            <Font name="BlablaHawk" size="63.0" />
+         </font>
+      </Button>
+      <Button fx:id="playAgain" layoutX="913.0" layoutY="644.0" mnemonicParsing="false" onAction="#handlePlayAgainBtn" prefHeight="55.0" prefWidth="144.0" style="-fx-background-color: #febd08;" text="Play Again" textFill="#282727">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="back_btn_board_sc" layoutX="30.0" layoutY="30.0" onAction="#handleBackButtonAction" prefHeight="51.0" prefWidth="55.0" style="-fx-background-radius: 30; -fx-background-color: #ff4948;" text="&lt;" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <MediaView fx:id="videoPlayer" fitHeight="10.0" fitWidth="10.0" onMouseClicked="#removeVideo" preserveRatio="false" />
+   </children>
+</Pane>
