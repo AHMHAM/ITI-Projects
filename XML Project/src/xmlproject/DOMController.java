@@ -28,8 +28,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-// FXML Controller class
 public class DOMController implements Initializable {
+
     @FXML
     private TextField textName;
     @FXML
@@ -75,14 +75,16 @@ public class DOMController implements Initializable {
     }
 
     public void onPrev(ActionEvent event) {
-        if (currentIndex > 0)
+        if (currentIndex > 0) {
             currentIndex--;
+        }
         viewNode();
     }
 
     public void onNext(ActionEvent event) {
-        if (currentIndex < totalNumNodes - 1)
+        if (currentIndex < totalNumNodes - 1) {
             currentIndex++;
+        }
         viewNode();
     }
 
@@ -124,6 +126,7 @@ public class DOMController implements Initializable {
 
     public void onUpdate(ActionEvent event) {
         toggleTextFields();
+        labelCurrentStatus.setText("");
         if (!textName.getText().trim().isEmpty() && totalNumNodes > 0) {
             labelCurrentStatus.setText("Updating");
             node = nodeList.item(currentIndex);
@@ -179,8 +182,9 @@ public class DOMController implements Initializable {
     }
 
     public void onSave(ActionEvent event) {
-        if (totalNumNodes <= 0)
+        if (totalNumNodes <= 0) {
             return;
+        }
         try {
             TransformerFactory factory = TransformerFactory.newInstance();
             Transformer transformer = factory.newTransformer();
@@ -194,6 +198,7 @@ public class DOMController implements Initializable {
         }
     }
 
+    
     // Private Methods
     private void parseXML() {
         try {
@@ -222,21 +227,19 @@ public class DOMController implements Initializable {
     // If xml file doesn't exist, createNewFile
     private File findFile() {
         file = new File("employees.xml");
-        if (!file.isFile())
+        if (!file.isFile()) {
             createNewFile();
+        }
         return file;
     }
 
     private void createNewFile() {
-        document = documentBuilder.newDocument();
-        Element root = document.createElement("employees");
-        document.appendChild(root);
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer;
             transformer = transformerFactory.newTransformer();
             DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(new File("employees.xml"));
+            StreamResult streamResult = new StreamResult(new File("recordings.txt"));
             transformer.transform(domSource, streamResult);
         } catch (TransformerException ex) {
             Logger.getLogger(DOMController.class.getName()).log(Level.SEVERE, null, ex);
@@ -256,10 +259,11 @@ public class DOMController implements Initializable {
         textAddress.setDisable(currentState);
         textEmail.setDisable(currentState);
         greenCircle.setVisible(!currentState);
-        if (currentState == false)
+        if (currentState == false) {
             labelCurrentStatus.setText("Editing Entry");
-        else
+        } else {
             labelCurrentStatus.setText("");
+        }
     }
 
     private void emptyTextFields() {
