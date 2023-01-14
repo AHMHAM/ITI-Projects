@@ -234,12 +234,14 @@ public class DOMController implements Initializable {
     }
 
     private void createNewFile() {
+        document = documentBuilder.newDocument();
+        Element root = document.createElement("employees");
+        document.appendChild(root);
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer;
-            transformer = transformerFactory.newTransformer();
+            Transformer transformer = transformerFactory.newTransformer();
             DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(new File("recordings.txt"));
+            StreamResult streamResult = new StreamResult(new File("employees.xml"));
             transformer.transform(domSource, streamResult);
         } catch (TransformerException ex) {
             Logger.getLogger(DOMController.class.getName()).log(Level.SEVERE, null, ex);
