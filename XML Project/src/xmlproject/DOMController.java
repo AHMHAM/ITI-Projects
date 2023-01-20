@@ -182,19 +182,18 @@ public class DOMController implements Initializable {
     }
 
     public void onSave(ActionEvent event) {
-        if (totalNumNodes <= 0) {
-            return;
-        }
-        try {
-            TransformerFactory factory = TransformerFactory.newInstance();
-            Transformer transformer = factory.newTransformer();
-            DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(file);
-            transformer.transform(domSource, streamResult);
-            currentIndex = 0;
-            labelCurrentStatus.setText("Saved Successfully");
-        } catch (TransformerException ex) {
-            Logger.getLogger(DOMController.class.getName()).log(Level.SEVERE, null, ex);
+        if (totalNumNodes > 0) {
+            try {
+                TransformerFactory factory = TransformerFactory.newInstance();
+                Transformer transformer = factory.newTransformer();
+                DOMSource domSource = new DOMSource(document);
+                StreamResult streamResult = new StreamResult(file);
+                transformer.transform(domSource, streamResult);
+                currentIndex = 0;
+                labelCurrentStatus.setText("Saved Successfully");
+            } catch (TransformerException ex) {
+                Logger.getLogger(DOMController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
